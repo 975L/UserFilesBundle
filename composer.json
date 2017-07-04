@@ -21,7 +21,7 @@
         "php": ">=5.5.9",
         "symfony/framework-bundle": "3.*",
         "sensio/framework-extra-bundle": "3.*",
-        "symfony/assetic-bundle": "2.*"
+        "symfony/assetic-bundle": "2.*",
         "symfony/swiftmailer-bundle": "3.*",
         "friendsofsymfony/user-bundle": "2.*",
         "c975l/email-bundle": "1.*"
