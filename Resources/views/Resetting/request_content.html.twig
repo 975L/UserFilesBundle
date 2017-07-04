@@ -1,0 +1,19 @@
+{% trans_default_domain 'userFiles' %}
+{# Reset password info #}
+<p class="text-center">
+    {{ 'text.reset_password_info'|trans }}
+</p>
+{# Form #}
+<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+    <div>
+{# Email #}
+        <div class="form-group">
+            <label for="username" class="control-label required">{{ 'label.email'|trans }}</label>
+            <input type="text" id="username" name="username" required="required" class="form-control" placeholder="{{ 'label.email'|trans }}" />
+        </div>
+    </div>
+{# Submit #}
+    <div class="form-group">
+        <input type="submit" value="{{ 'resetting.request.submit'|trans({}, 'FOSUserBundle') }}" class="btn btn-block btn-lg btn-primary" />
+    </div>
+</form>

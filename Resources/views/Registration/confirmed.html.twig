@@ -1,0 +1,12 @@
+{% extends "@c975LUserFiles/layout.html.twig" %}
+{% trans_default_domain 'userFiles' %}
+{% set title = 'label.account_activated'|trans %}
+
+{% block userfiles_content %}
+    <p class="alert alert-success text-center">
+        {{ 'registration.confirmed'|trans({'%username%': user.firstname}, 'FOSUserBundle') }}
+    </p>
+    {% if targetUrl %}
+        <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans({}, 'FOSUserBundle') }}</a></p>
+    {% endif %}
+{% endblock %}

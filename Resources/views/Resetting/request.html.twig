@@ -1,0 +1,17 @@
+{% extends "@c975LUserFiles/layout.html.twig" %}
+{% trans_default_domain 'userFiles' %}
+{% set title = 'label.request_password_change'|trans %}
+
+{% block userfiles_content %}
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        {% if is_granted('ROLE_USER') %}
+            {% include('@c975LUserFiles/user/alreadySignedIn.html.twig') %}
+            <p class="text-center">
+                <a href="{{ path('fos_user_change_password') }}" rel="nofollow" title="{{ 'label.change_password'|trans }}">
+                    {{ 'label.change_password'|trans }}</a>
+            </p>
+        {% else %}
+            {% include('@c975LUserFiles/Resetting/request_content.html.twig') %}
+        {% endif %}
+    </div>
+{% endblock %}

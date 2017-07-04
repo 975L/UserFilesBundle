@@ -13,4 +13,8 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class c975LUserFilesBundle extends Bundle
 {
+    public function getParent()
+    {
+        return 'FOSUserBundle';
+    }
 }

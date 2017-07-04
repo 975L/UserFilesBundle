@@ -1,0 +1,10 @@
+{% extends "@c975LUserFiles/layout.html.twig" %}
+{% trans_default_domain 'userFiles' %}
+{% set title = 'label.user_profile_show'|trans %}
+
+{% block userfiles_content %}
+{# Form #}
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        {% include('@c975LUserFiles/Profile/show_content.html.twig') %}
+    </div>
+{% endblock %}

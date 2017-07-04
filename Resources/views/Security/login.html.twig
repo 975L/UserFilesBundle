@@ -1,0 +1,77 @@
+{% extends "@c975LUserFiles/layout.html.twig" %}
+{% trans_default_domain 'userFiles' %}
+{% set title = 'label.signin'|trans %}
+
+{% block userfiles_content %}
+    <div class="row">
+{# Already signed in #}
+        {% if is_granted('ROLE_USER') %}
+            <div class="col-xs-12">
+                {% include('@c975LUserFiles/user/alreadySignedIn.html.twig') %}
+            </div>
+{# Signin form #}
+        {% else %}
+{# Registration #}
+            {% if registration == true %}
+                <div class="col-xs-12 col-sm-5">
+                    <p class="text-center">
+                        {{ 'label.by_creating_account'|trans({'%site%': site})|raw }}
+                        <br />
+                        <strong>
+                            <a href="{{ path('fos_user_registration_register') }}" class="btn btn-info" rel="nofollow">
+                                <span class="glyphicon glyphicon-user white"></span> {{ 'label.signin_create_account'|trans }}</a>
+                        </strong>
+                    </p>
+                </div>
+                <div class="col-xs-12 col-sm-7">
+            {% else %}
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+            {% endif %}
+{# Errors #}
+                {% if error %}
+                    <div class="alert alert-danger text-center">
+                        {{ error.messageKey|trans(error.messageData, 'security') }}
+                    </div>
+                {% endif %}
+{# Signin #}
+                <p class="text-center">
+                    {{ 'label.using_created_account'|trans({'%site%': site})|raw }}
+                </p>
+{# Form #}
+                <form action="{{ path("fos_user_security_check") }}" method="post">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+                    <div class="form-group">
+                        <label for="username" class="control-label required">{{ 'form.email'|trans({}, 'FOSUserBundle') }}</label>
+                        <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="form-control" placeholder="{{ 'form.email'|trans({}, 'FOSUserBundle') }}" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="control-label required">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+                        <input type="password" id="password" name="_password" required="required" class="form-control" placeholder="{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="off" />
+                        <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+                    </div>
+{# Mandatory field #}
+                    <p class="text-muted">
+                        <em>
+                            {{ 'label.mandatory_field'|trans }}
+                        </em>
+                    </p>
+{# Forgot password #}
+                    <p class="text-center">
+                        <a href="{{ path('fos_user_resetting_request') }}" rel="nofollow" title="{{ 'label.forgot_password'|trans }}">
+                            {{ 'label.forgot_password'|trans }}</a>
+                    </p>
+{# Submit #}
+                    <div class="form-group">
+                        <input type="submit" id="_submit" name="_submit" value="{{ 'label.signin'|trans }}" class="btn btn-block btn-lg btn-primary" />
+                    </div>
+                </form>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

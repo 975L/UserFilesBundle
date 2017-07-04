@@ -1,0 +1,55 @@
+{% extends "@c975LUserFiles/layout.html.twig" %}
+{% trans_default_domain 'userFiles' %}
+{% set title = 'label.dashboard'|trans %}
+
+{% block userfiles_content %}
+    {% if is_granted('ROLE_USER') %}
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+{# Avatar #}
+            <p class="text-center">
+                <img class="img-circle" src="{{ app.user.avatar }}" width="128" height="128" />
+            </p>
+            <div class="panel panel-primary">
+{# Actions #}
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{ 'label.actions'|trans }}</h3>
+                </div>
+                <div class="panel-body">
+                    <ul>
+{# View profile #}
+                        <li>
+                            <a href="{{ path('fos_user_profile_show') }}">
+                                {{ 'label.view_profile'|trans }}</a>
+                        </li>
+{# Edit profile #}
+                        <li>
+                            <a href="{{ path('fos_user_profile_edit') }}">
+                                {{ 'label.edit_profile'|trans }}</a>
+                        </li>
+{# Change password #}
+                        <li>
+                            <a href="{{ path('fos_user_change_password') }}">
+                                <span class="text-warning">
+                                    {{ 'label.change_password'|trans }}
+                                </span></a>
+                        </li>
+{# Delete account #}
+                        <li>
+                            <a href="{{ path('userfiles_delete_account') }}">
+                                <span class="text-danger">
+                                    {{ 'label.delete_account'|trans }}
+                                </span></a>
+                        </li>
+{# Sign out #}
+                        <li>
+                            <a href="{{ path('userfiles_signout') }}">
+                                {{ 'label.signout'|trans }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        {% include('@c975LUserFiles/user/alertMustSignIn.html.twig') %}
+    {% endif %}
+{% endblock %}

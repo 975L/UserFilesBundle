@@ -1,0 +1,8 @@
+{% extends "@c975LUserFiles/emails/layout.html.twig" %}
+{% trans_default_domain 'userFiles' %}
+
+{% block userfiles_content %}
+    <p>
+        {{ 'label.account_deleted'|trans({}, 'user') }}
+    </p>
+{% endblock %}

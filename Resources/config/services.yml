@@ -1,0 +1,21 @@
+services:
+    user_files_registration:
+        class: c975L\UserFilesBundle\Form\RegistrationType
+        arguments: ['@session', '@router']
+        tags:
+            - { name: form.type }
+    user_files_registration_listener:
+        class: c975L\UserFilesBundle\EventListener\RegistrationListener
+        arguments: ['@doctrine.orm.entity_manager']
+        tags:
+            - { name: kernel.event_subscriber }
+    user_files_profile:
+        class: c975L\UserFilesBundle\Form\ProfileType
+        arguments: ['@security.token_storage']
+        tags:
+            - { name: form.type }
+    user_files_delete:
+        class: c975L\UserFilesBundle\Form\DeleteType
+        arguments: ['@security.token_storage']
+        tags:
+            - { name: form.type }

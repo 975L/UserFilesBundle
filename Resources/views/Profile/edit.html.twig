@@ -1,0 +1,24 @@
+{% extends "@c975LUserFiles/layout.html.twig" %}
+{% trans_default_domain 'userFiles' %}
+{% set title = 'label.user_profile_edit'|trans %}
+
+{% block userfiles_content %}
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+{# Avatar #}
+        <p class="text-center">
+            <img class="img-circle" src="{{ app.user.avatar }}" width="128" height="128" />
+        </p>
+{# Avatar information #}
+        <p class="text-center">
+            {{ 'text.gravatar_picture'|trans({}, 'user')|raw }}
+        </p>
+{# Form #}
+        {% include "@c975LUserFiles/Profile/edit_content.html.twig" %}
+{# Mandatory field #}
+        <p class="text-muted">
+            <em>
+                {{ 'label.mandatory_field'|trans }}
+            </em>
+        </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="es" datatype="plaintext" original="validators.en.xlf">
+    <body>
+      <trans-unit id="66">
+        <source>email.not_valid</source>
+        <target><![CDATA[El correo electrónico no es válida]]></target>
+      </trans-unit>
+      <trans-unit id="76">
+        <source>firstname.max_length</source>
+        <target><![CDATA[Mi primer nombre no puede tener más de {{ limit }} de caracteres]]></target>
+      </trans-unit>
+      <trans-unit id="75">
+        <source>firstname.min_length</source>
+        <target><![CDATA[Mi primer nombre debe ser al menos {{ limit }} de caracteres]]></target>
+      </trans-unit>
+      <trans-unit id="79">
+        <source>gender.choose_valid</source>
+        <target><![CDATA[Elegir un género válido]]></target>
+      </trans-unit>
+      <trans-unit id="82">
+        <source>host.invalid</source>
+        <target><![CDATA[El anfitrión '{{ value }}' no se pudo resolver]]></target>
+      </trans-unit>
+      <trans-unit id="80">
+        <source>label.error_challenge</source>
+        <target><![CDATA[Mala respuesta al desafío]]></target>
+      </trans-unit>
+      <trans-unit id="85">
+        <source>language.choose_valid</source>
+        <target><![CDATA[Elegir una idioma válida]]></target>
+      </trans-unit>
+      <trans-unit id="77">
+        <source>lastname.max_length</source>
+        <target><![CDATA[Mi apellido no puede tener más de {{ limit }} de caracteres]]></target>
+      </trans-unit>
+      <trans-unit id="78">
+        <source>lastname.min_length</source>
+        <target><![CDATA[Mi apellido debe ser al menos {{ limit }} de caracteres]]></target>
+      </trans-unit>
+      <trans-unit id="70">
+        <source>message.max_length</source>
+        <target><![CDATA[Mi mensaje no puede contener más de {{ limit }} caracteres]]></target>
+      </trans-unit>
+      <trans-unit id="69">
+        <source>message.min_length</source>
+        <target><![CDATA[Mi mensaje debe ser al menos {{ limit }} caracteres]]></target>
+      </trans-unit>
+      <trans-unit id="68">
+        <source>name.max_length</source>
+        <target><![CDATA[Mi nombre no puede tener más de {{ limit }} caracteres]]></target>
+      </trans-unit>
+      <trans-unit id="67">
+        <source>name.min_length</source>
+        <target><![CDATA[Mi nombre debe ser al menos {{ limit }} caracteres]]></target>
+      </trans-unit>
+      <trans-unit id="83">
+        <source>password.requirement</source>
+        <target><![CDATA[La contraseña debe tener entre 8 y 48 caracteres y contener al menos 1 letra, 1 dígito y 1 señal dentro de @#$%^*]]></target>
+      </trans-unit>
+      <trans-unit id="86">
+        <source>short.max_length</source>
+        <target><![CDATA[Mi Atajo no puede tener más de {{ limit }} caracteres]]></target>
+      </trans-unit>
+      <trans-unit id="87">
+        <source>short.min_length</source>
+        <target><![CDATA[Mi Atajo debe ser al menos {{ limit }} caracteres]]></target>
+      </trans-unit>
+      <trans-unit id="73">
+        <source>short.not_blank</source>
+        <target><![CDATA[El atajo no puede estar vacía]]></target>
+      </trans-unit>
+      <trans-unit id="88">
+        <source>shortcut.requirement</source>
+        <target><![CDATA[El Atajo contraseña debe tener entre 2 y 12 caracteres y contener signos al dentro de abcdefghijklmnopqrstuvwxyz0123456789-_]]></target>
+      </trans-unit>
+      <trans-unit id="74">
+        <source>siret.not_valid</source>
+        <target><![CDATA[El número SIRET "%string%" no es válido.]]></target>
+      </trans-unit>
+      <trans-unit id="72">
+        <source>subject.max_length</source>
+        <target><![CDATA[El sujeto no puede tener más de {{ limit }} caracteres]]></target>
+      </trans-unit>
+      <trans-unit id="71">
+        <source>subject.min_length</source>
+        <target><![CDATA[El sujeto debe ser al menos {{ limit }} caracteres]]></target>
+      </trans-unit>
+      <trans-unit id="84">
+        <source>tva.not_valid</source>
+        <target><![CDATA[El número TVA "%string%" no es válido.]]></target>
+      </trans-unit>
+      <trans-unit id="81">
+        <source>url.invalid</source>
+        <target><![CDATA[La url {{ value }} no es válida]]></target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,27 @@
+{% trans_default_domain 'userFiles' %}
+
+{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+    {{ form_widget(form) }}
+
+    <div class="form-group">
+        <input type="submit" value="{{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}" class="btn btn-block btn-lg btn-primary" />
+    </div>
+{{ form_end(form) }}
+
+{# Back to dashboard #}
+<p class="text-center">
+    <a href="{{ path('userfiles_dashboard') }}" title="{{ 'label.back_to_dashboard'|trans }}">
+        {{ 'label.back_to_dashboard'|trans }}</a>
+</p>
+
+{# Change password #}
+<p class="text-center">
+    <a href="{{ path('fos_user_change_password') }}" rel="nofollow" title="{{ 'label.change_password'|trans }}" class="text-warning">
+        {{ 'label.change_password'|trans }}</a>
+</p>
+
+{# Delete account #}
+<p class="text-center">
+    <a href="{{ path('userfiles_delete_account') }}" rel="nofollow" title="{{ 'label.delete_account'|trans }}" class="text-danger">
+        {{ 'label.delete_account'|trans }}</a>
+</p>
