@@ -1,5 +1,10 @@
 # Changelog
 
+v1.2.2
+------
+- Update README.md (07/07/2017)
+- Add test on user in `dashboarActions.html.twig`
+
 v1.2.1
 ------
 - Add use of gravatar as an option (07/07/2017)

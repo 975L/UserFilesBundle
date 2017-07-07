@@ -80,6 +80,7 @@ doctrine:
         auto_generate_proxy_classes: "%kernel.debug%"
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
+
 #FosUserBundle
 fos_user:
     db_driver:                  orm
@@ -130,9 +131,9 @@ c975_l_user_files:
     #Name of site to be displayed
     site: 'Example.com'
     #If registration is allowed or not
-    registration: false#true (default)
+    registration: false #true (default)
     #(Optional) If you want to display the gravatar linked to the email user's account
-    gravatar: true#null (default)
+    gravatar: true #null (default)
 ```
 Then add the correct values in the `app/parameters.yml`
 
