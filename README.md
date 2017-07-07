@@ -131,6 +131,8 @@ c975_l_user_files:
     site: 'Example.com'
     #If registration is allowed or not
     registration: false#true (default)
+    #(Optional) If you want to display the gravatar linked to the email user's account
+    gravatar: true#null (default)
 ```
 Then add the correct values in the `app/parameters.yml`
 

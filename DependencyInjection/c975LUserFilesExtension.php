@@ -33,5 +33,6 @@ class c975LUserFilesExtension extends Extension
 
         $container->setParameter('c975_l_user_files.site', $processedConfig['site']);
         $container->setParameter('c975_l_user_files.registration', $processedConfig['registration']);
+        $container->setParameter('c975_l_user_files.gravatar', $processedConfig['gravatar']);
     }
 }

@@ -1,1 +1,47 @@
-<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2"><file source-language="en" target-language="es" datatype="plaintext" original="validators.en.xlf"><body><trans-unit id="48"><source>email.not_valid</source><target><![CDATA[El correo electrónico no es válida]]></target></trans-unit><trans-unit id="52"><source>firstname.max_length</source><target><![CDATA[Mi primer nombre no puede tener más de {{ limit }} de caracteres]]></target></trans-unit><trans-unit id="51"><source>firstname.min_length</source><target><![CDATA[Mi primer nombre debe ser al menos {{ limit }} de caracteres]]></target></trans-unit><trans-unit id="55"><source>gender.choose_valid</source><target><![CDATA[Elegir un género válido]]></target></trans-unit><trans-unit id="56"><source>label.error_challenge</source><target><![CDATA[Mala respuesta al desafío]]></target></trans-unit><trans-unit id="53"><source>lastname.max_length</source><target><![CDATA[Mi apellido no puede tener más de {{ limit }} de caracteres]]></target></trans-unit><trans-unit id="54"><source>lastname.min_length</source><target><![CDATA[Mi apellido debe ser al menos {{ limit }} de caracteres]]></target></trans-unit><trans-unit id="50"><source>name.max_length</source><target><![CDATA[Mi nombre no puede tener más de {{ limit }} caracteres]]></target></trans-unit><trans-unit id="49"><source>name.min_length</source><target><![CDATA[Mi nombre debe ser al menos {{ limit }} caracteres]]></target></trans-unit><trans-unit id="57"><source>password.requirement</source><target><![CDATA[La contraseña debe tener entre 8 y 48 caracteres y contener al menos 1 letra, 1 dígito y 1 señal dentro de @#$%^*]]></target></trans-unit></body></file></xliff>
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="es" datatype="plaintext" original="validators.en.xlf">
+    <body>
+      <trans-unit id="48">
+        <source>email.not_valid</source>
+        <target><![CDATA[El correo electrónico no es válida]]></target>
+      </trans-unit>
+      <trans-unit id="52">
+        <source>firstname.max_length</source>
+        <target><![CDATA[Mi primer nombre no puede tener más de {{ limit }} de caracteres]]></target>
+      </trans-unit>
+      <trans-unit id="51">
+        <source>firstname.min_length</source>
+        <target><![CDATA[Mi primer nombre debe ser al menos {{ limit }} de caracteres]]></target>
+      </trans-unit>
+      <trans-unit id="55">
+        <source>gender.choose_valid</source>
+        <target><![CDATA[Elegir un género válido]]></target>
+      </trans-unit>
+      <trans-unit id="56">
+        <source>label.error_challenge</source>
+        <target><![CDATA[Mala respuesta al desafío]]></target>
+      </trans-unit>
+      <trans-unit id="53">
+        <source>lastname.max_length</source>
+        <target><![CDATA[Mi apellido no puede tener más de {{ limit }} de caracteres]]></target>
+      </trans-unit>
+      <trans-unit id="54">
+        <source>lastname.min_length</source>
+        <target><![CDATA[Mi apellido debe ser al menos {{ limit }} de caracteres]]></target>
+      </trans-unit>
+      <trans-unit id="50">
+        <source>name.max_length</source>
+        <target><![CDATA[Mi nombre no puede tener más de {{ limit }} caracteres]]></target>
+      </trans-unit>
+      <trans-unit id="49">
+        <source>name.min_length</source>
+        <target><![CDATA[Mi nombre debe ser al menos {{ limit }} caracteres]]></target>
+      </trans-unit>
+      <trans-unit id="57">
+        <source>password.requirement</source>
+        <target><![CDATA[La contraseña debe tener entre 8 y 48 caracteres y contener al menos 1 letra, 1 dígito y 1 señal dentro de @#$%^*]]></target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

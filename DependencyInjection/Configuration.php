@@ -26,6 +26,9 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('registration')
                     ->defaultTrue()
                 ->end()
+                ->scalarNode('gravatar')
+                    ->defaultNull()
+                ->end()
             ->end()
         ;
 

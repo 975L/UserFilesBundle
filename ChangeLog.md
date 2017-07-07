@@ -1,5 +1,10 @@
 # Changelog
 
+v1.2.1
+------
+- Add use of gravatar as an option (07/07/2017)
+- Make xml in translation xlf files human-readable
+
 v1.2
 ----
 - Update README.md about informatoin in `security.yml` (06/07/2017)

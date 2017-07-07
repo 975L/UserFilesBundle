@@ -39,6 +39,7 @@ class UserController extends Controller
             //Renders the dashboard
             return $this->render('@c975LUserFiles/pages/dashboard.html.twig', array(
                 'user' => $user,
+                'gravatar' => $this->getParameter('c975_l_user_files.gravatar'),
                 ));
         } else {
             throw $this->createAccessDeniedException();

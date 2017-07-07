@@ -1,5 +1,237 @@
-<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2"><file source-language="en" target-language="fr" datatype="plaintext" original="userFiles.en.xlf"><body><trans-unit id="14"><source>label.account_activated</source><target><![CDATA[Compte activé]]></target></trans-unit><trans-unit id="15"><source>label.account_created</source><target><![CDATA[Compte créé en attente de validation]]></target></trans-unit><trans-unit id="46"><source>label.account_deleted</source><target><![CDATA[Votre compte a été supprimé]]></target></trans-unit><trans-unit id="34"><source>label.actions</source><target><![CDATA[Actions]]></target></trans-unit><trans-unit id="40"><source>label.avatar</source><target><![CDATA[Avatar]]></target></trans-unit><trans-unit id="38"><source>label.back_to_dashboard</source><target><![CDATA[Retour au tableau de bord]]></target></trans-unit><trans-unit id="42"><source>label.by_creating_account</source><target><![CDATA[En créant un compte sur <strong>%site%</strong>]]></target></trans-unit><trans-unit id="16"><source>label.challenge</source><target><![CDATA[Je résouds ce petit challenge]]></target></trans-unit><trans-unit id="17"><source>label.change_password</source><target><![CDATA[Changement de mot de passe]]></target></trans-unit><trans-unit id="3"><source>label.creation</source><target><![CDATA[Création]]></target></trans-unit><trans-unit id="37"><source>label.dashboard</source><target><![CDATA[Tableau de bord]]></target></trans-unit><trans-unit id="36"><source>label.delete_account</source><target><![CDATA[Suppression du compte]]></target></trans-unit><trans-unit id="27"><source>label.edit</source><target><![CDATA[Éditer]]></target></trans-unit><trans-unit id="32"><source>label.edit_profile</source><target><![CDATA[Éditer mon profil]]></target></trans-unit><trans-unit id="1"><source>label.email</source><target><![CDATA[Email]]></target></trans-unit><trans-unit id="63"><source>label.email_sent_by</source><target><![CDATA[Cet email vous a été envoyé par <strong>%site%</strong>]]></target></trans-unit><trans-unit id="8"><source>label.firstname</source><target><![CDATA[Prénom]]></target></trans-unit><trans-unit id="24"><source>label.forgot_password</source><target><![CDATA[Mot de passe oublié]]></target></trans-unit><trans-unit id="7"><source>label.gender</source><target><![CDATA[Genre]]></target></trans-unit><trans-unit id="9"><source>label.lastname</source><target><![CDATA[Nom]]></target></trans-unit><trans-unit id="19"><source>label.mail_password_sent</source><target><![CDATA[Mail avec ré-initialisation de mot de passe envoyé]]></target></trans-unit><trans-unit id="13"><source>label.man</source><target><![CDATA[Homme]]></target></trans-unit><trans-unit id="60"><source>label.mandatory_field</source><target><![CDATA[* Champ requis]]></target></trans-unit><trans-unit id="58"><source>label.member_since</source><target><![CDATA[Membre depuis]]></target></trans-unit><trans-unit id="18"><source>label.password_already_requested</source><target><![CDATA[Mot de passe déjà demandé]]></target></trans-unit><trans-unit id="64"><source>label.regards_team</source><target><![CDATA[Cordialement,
-L'équipe %site%]]></target></trans-unit><trans-unit id="20"><source>label.request_password_change</source><target><![CDATA[Demande de changement de mot de passe]]></target></trans-unit><trans-unit id="22"><source>label.reset_content</source><target><![CDATA[Ré-initialisation contenu]]></target></trans-unit><trans-unit id="21"><source>label.reset_password</source><target><![CDATA[Ré-initialisation du mot de passe]]></target></trans-unit><trans-unit id="4"><source>label.signin</source><target><![CDATA[Me connecter]]></target></trans-unit><trans-unit id="5"><source>label.signin_create_account</source><target><![CDATA[Créer mon compte]]></target></trans-unit><trans-unit id="28"><source>label.signout</source><target><![CDATA[Me déconnecter]]></target></trans-unit><trans-unit id="65"><source>label.thanks_confidence</source><target><![CDATA[Merci pour votre confiance !
-Nous restons à votre disposition pour la moindre demande.]]></target></trans-unit><trans-unit id="26"><source>label.user_profile_edit</source><target><![CDATA[Édition profil utilisateur]]></target></trans-unit><trans-unit id="25"><source>label.user_profile_show</source><target><![CDATA[Profil utilisateur]]></target></trans-unit><trans-unit id="43"><source>label.using_created_account</source><target><![CDATA[En utilisant mon compte créé sur <strong>%site%</strong>]]></target></trans-unit><trans-unit id="44"><source>label.using_following_services</source><target><![CDATA[En utilisant l'un des services suivants]]></target></trans-unit><trans-unit id="30"><source>label.view_profile</source><target><![CDATA[Voir mon profil]]></target></trans-unit><trans-unit id="12"><source>label.woman</source><target><![CDATA[Femme]]></target></trans-unit><trans-unit id="2"><source>placeholder.email</source><target><![CDATA[Mon email]]></target></trans-unit><trans-unit id="11"><source>placeholder.firstname</source><target><![CDATA[Mon prénom]]></target></trans-unit><trans-unit id="10"><source>placeholder.lastname</source><target><![CDATA[Mon nom]]></target></trans-unit><trans-unit id="47"><source>text.account_deleted</source><target><![CDATA[Votre compte a été supprimé]]></target></trans-unit><trans-unit id="31"><source>text.alert_must_signin_warning</source><target><![CDATA[Je dois me connecter avant de pouvoir utiliser ce service]]></target></trans-unit><trans-unit id="33"><source>text.alert_not_allowed</source><target><![CDATA[Je ne suis pas autorisé à utiliser cette ressource]]></target></trans-unit><trans-unit id="29"><source>text.already_signedin_warning</source><target><![CDATA[Vous êtes déjà connecté]]></target></trans-unit><trans-unit id="59"><source>text.delete_account_info</source><target><![CDATA[En supprimant mon compte, je comprends que tout ce qui est lié à mon compte sera supprimé. <strong>Je comprends aussi que cette action est immédiate et irréversible.</strong>]]></target></trans-unit><trans-unit id="39"><source>text.gravatar_picture</source><target><![CDATA[Nous utilisons <a href="http://gravatar.com" rel="nofollow">gravatar.com</a> pour afficher l'image]]></target></trans-unit><trans-unit id="35"><source>text.greetings</source><target><![CDATA[Merci pour votre confiance !
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="userFiles.en.xlf">
+    <body>
+      <trans-unit id="14">
+        <source>label.account_activated</source>
+        <target><![CDATA[Compte activé]]></target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>label.account_created</source>
+        <target><![CDATA[Compte créé en attente de validation]]></target>
+      </trans-unit>
+      <trans-unit id="46">
+        <source>label.account_deleted</source>
+        <target><![CDATA[Votre compte a été supprimé]]></target>
+      </trans-unit>
+      <trans-unit id="34">
+        <source>label.actions</source>
+        <target><![CDATA[Actions]]></target>
+      </trans-unit>
+      <trans-unit id="40">
+        <source>label.avatar</source>
+        <target><![CDATA[Avatar]]></target>
+      </trans-unit>
+      <trans-unit id="38">
+        <source>label.back_to_dashboard</source>
+        <target><![CDATA[Retour au tableau de bord]]></target>
+      </trans-unit>
+      <trans-unit id="42">
+        <source>label.by_creating_account</source>
+        <target><![CDATA[En créant un compte sur <strong>%site%</strong>]]></target>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>label.challenge</source>
+        <target><![CDATA[Je résouds ce petit challenge]]></target>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>label.change_password</source>
+        <target><![CDATA[Changement de mot de passe]]></target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>label.creation</source>
+        <target><![CDATA[Création]]></target>
+      </trans-unit>
+      <trans-unit id="37">
+        <source>label.dashboard</source>
+        <target><![CDATA[Tableau de bord]]></target>
+      </trans-unit>
+      <trans-unit id="36">
+        <source>label.delete_account</source>
+        <target><![CDATA[Suppression du compte]]></target>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>label.edit</source>
+        <target><![CDATA[Éditer]]></target>
+      </trans-unit>
+      <trans-unit id="32">
+        <source>label.edit_profile</source>
+        <target><![CDATA[Éditer mon profil]]></target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>label.email</source>
+        <target><![CDATA[Email]]></target>
+      </trans-unit>
+      <trans-unit id="63">
+        <source>label.email_sent_by</source>
+        <target><![CDATA[Cet email vous a été envoyé par <strong>%site%</strong>]]></target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>label.firstname</source>
+        <target><![CDATA[Prénom]]></target>
+      </trans-unit>
+      <trans-unit id="24">
+        <source>label.forgot_password</source>
+        <target><![CDATA[Mot de passe oublié]]></target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>label.gender</source>
+        <target><![CDATA[Genre]]></target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>label.lastname</source>
+        <target><![CDATA[Nom]]></target>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>label.mail_password_sent</source>
+        <target><![CDATA[Mail avec ré-initialisation de mot de passe envoyé]]></target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>label.man</source>
+        <target><![CDATA[Homme]]></target>
+      </trans-unit>
+      <trans-unit id="60">
+        <source>label.mandatory_field</source>
+        <target><![CDATA[* Champ requis]]></target>
+      </trans-unit>
+      <trans-unit id="58">
+        <source>label.member_since</source>
+        <target><![CDATA[Membre depuis]]></target>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>label.password_already_requested</source>
+        <target><![CDATA[Mot de passe déjà demandé]]></target>
+      </trans-unit>
+      <trans-unit id="64">
+        <source>label.regards_team</source>
+        <target>
+          <![CDATA[Cordialement,
+                   L'équipe %site%]]>
+        </target>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>label.request_password_change</source>
+        <target><![CDATA[Demande de changement de mot de passe]]></target>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>label.reset_content</source>
+        <target><![CDATA[Ré-initialisation contenu]]></target>
+      </trans-unit>
+      <trans-unit id="21">
+        <source>label.reset_password</source>
+        <target><![CDATA[Ré-initialisation du mot de passe]]></target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>label.signin</source>
+        <target><![CDATA[Me connecter]]></target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>label.signin_create_account</source>
+        <target><![CDATA[Créer mon compte]]></target>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>label.signout</source>
+        <target><![CDATA[Me déconnecter]]></target>
+      </trans-unit>
+      <trans-unit id="65">
+        <source>label.thanks_confidence</source>
+        <target>
+          <![CDATA[Merci pour votre confiance !
+                   Nous restons à votre disposition pour la moindre demande.]]>
+        </target>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>label.user_profile_edit</source>
+        <target><![CDATA[Édition profil utilisateur]]></target>
+      </trans-unit>
+      <trans-unit id="25">
+        <source>label.user_profile_show</source>
+        <target><![CDATA[Profil utilisateur]]></target>
+      </trans-unit>
+      <trans-unit id="43">
+        <source>label.using_created_account</source>
+        <target><![CDATA[En utilisant mon compte créé sur <strong>%site%</strong>]]></target>
+      </trans-unit>
+      <trans-unit id="44">
+        <source>label.using_following_services</source>
+        <target><![CDATA[En utilisant l'un des services suivants]]></target>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>label.view_profile</source>
+        <target><![CDATA[Voir mon profil]]></target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>label.woman</source>
+        <target><![CDATA[Femme]]></target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>placeholder.email</source>
+        <target><![CDATA[Mon email]]></target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>placeholder.firstname</source>
+        <target><![CDATA[Mon prénom]]></target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>placeholder.lastname</source>
+        <target><![CDATA[Mon nom]]></target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>text.account_deleted</source>
+        <target><![CDATA[Votre compte a été supprimé]]></target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>text.alert_must_signin_warning</source>
+        <target><![CDATA[Je dois me connecter avant de pouvoir utiliser ce service]]></target>
+      </trans-unit>
+      <trans-unit id="33">
+        <source>text.alert_not_allowed</source>
+        <target><![CDATA[Je ne suis pas autorisé à utiliser cette ressource]]></target>
+      </trans-unit>
+      <trans-unit id="29">
+        <source>text.already_signedin_warning</source>
+        <target><![CDATA[Vous êtes déjà connecté]]></target>
+      </trans-unit>
+      <trans-unit id="59">
+        <source>text.delete_account_info</source>
+        <target><![CDATA[En supprimant mon compte, je comprends que tout ce qui est lié à mon compte sera supprimé. <strong>Je comprends aussi que cette action est immédiate et irréversible.</strong>]]></target>
+      </trans-unit>
+      <trans-unit id="39">
+        <source>text.gravatar_picture</source>
+        <target><![CDATA[Nous utilisons <a href="http://gravatar.com" rel="nofollow">gravatar.com</a> pour afficher l'image]]></target>
+      </trans-unit>
+      <trans-unit id="35">
+        <source>text.greetings</source>
+        <target>
+          <![CDATA[Merci pour votre confiance !
 
-Cordialement,]]></target></trans-unit><trans-unit id="62"><source>text.hello</source><target><![CDATA[Bonjour,]]></target></trans-unit><trans-unit id="61"><source>text.no_spam</source><target><![CDATA[Nous conseillons d'enregistrer notre adresse email "%email%" dans votre carnet d'adresses afin que nos emails ne soient pas classés spam.]]></target></trans-unit><trans-unit id="41"><source>text.register_acceptance</source><target><![CDATA[En créant ce compte, je confirme que j'accepte les <strong><a href="%terms_link%" rel="nofollow">Conditions générales d'utilisation</a></strong>, les <strong><a href="%privacy_link%" rel="nofollow">Règles de confidentialité</a></strong> et l'<strong><a href="%cookies_link%" rel="nofollow">Utilisation des cookies</a></strong> de <strong>%site%</strong>.]]></target></trans-unit><trans-unit id="6"><source>text.register_info</source><target><![CDATA[J'utilise ce formulaire pour m'enregistrer, avec mon adresse email et mon mot de passe. Un email de confirmation me sera envoyé]]></target></trans-unit><trans-unit id="45"><source>text.reset_password_info</source><target><![CDATA[J'utilise ce formulaire pour ré-initialiser mon mot de passe]]></target></trans-unit><trans-unit id="23"><source>text.signin_social_not_concerned</source><target><![CDATA[J'utilise ce formulaire pour ré-initialiser mon mot de passe]]></target></trans-unit></body></file></xliff>
+                   Cordialement,]]>
+        </target>
+      </trans-unit>
+      <trans-unit id="62">
+        <source>text.hello</source>
+        <target><![CDATA[Bonjour,]]></target>
+      </trans-unit>
+      <trans-unit id="61">
+        <source>text.no_spam</source>
+        <target><![CDATA[Nous conseillons d'enregistrer notre adresse email "%email%" dans votre carnet d'adresses afin que nos emails ne soient pas classés spam.]]></target>
+      </trans-unit>
+      <trans-unit id="41">
+        <source>text.register_acceptance</source>
+        <target><![CDATA[En créant ce compte, je confirme que j'accepte les <strong><a href="%terms_link%" rel="nofollow">Conditions générales d'utilisation</a></strong>, les <strong><a href="%privacy_link%" rel="nofollow">Règles de confidentialité</a></strong> et l'<strong><a href="%cookies_link%" rel="nofollow">Utilisation des cookies</a></strong> de <strong>%site%</strong>.]]></target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>text.register_info</source>
+        <target><![CDATA[J'utilise ce formulaire pour m'enregistrer, avec mon adresse email et mon mot de passe. Un email de confirmation me sera envoyé]]></target>
+      </trans-unit>
+      <trans-unit id="45">
+        <source>text.reset_password_info</source>
+        <target><![CDATA[J'utilise ce formulaire pour ré-initialiser mon mot de passe]]></target>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>text.signin_social_not_concerned</source>
+        <target><![CDATA[J'utilise ce formulaire pour ré-initialiser mon mot de passe]]></target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
