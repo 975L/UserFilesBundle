@@ -1,5 +1,9 @@
 # Changelog
 
+v1.2.3
+------
+- Add use of gravatar options on forgotten templates (07/07/2017)
+
 v1.2.2
 ------
 - Update README.md (07/07/2017)

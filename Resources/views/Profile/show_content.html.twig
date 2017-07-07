@@ -4,49 +4,44 @@
 {% if user.gender != null %}
     {% set gender = ('label.' ~ user.gender)|trans %}
 {% endif %}
-
 {# Avatar #}
-    <p class="text-center">
-        <img class="img-circle" src="{{ app.user.avatar }}" width="128" height="128" />
-    </p>
-
+    {% if gravatar == true %}
+        <p class="text-center">
+            <img class="img-circle" src="{{ app.user.avatar }}" width="128" height="128" />
+        </p>
+    {% endif %}
+{# Form #}
 <form>
 {# Email #}
     <div class="form-group">
         <label for="username" class="control-label">{{ 'label.email'|trans }}</label>
         <input type="text" id="username" name="_username" value="{{ user.email }}" class="form-control" readonly="readonly" disabled="disabled"/>
     </div>
-
 {# Avatar #}
     <div class="form-group">
         <label for="avatar" class="control-label">{{ 'label.avatar'|trans }}</label>
         <input type="text" id="avatar" name="_avatar" value="{{ user.avatar }}" class="form-control" readonly="readonly" disabled="disabled"/>
     </div>
-
 {# Creation #}
     <div class="form-group">
         <label for="creation" class="control-label">{{ 'label.creation'|trans }}</label>
         <input type="text" id="creation" name="creation" value="{{ user.creation|localizeddate('short', 'none') }}" class="form-control" readonly="readonly" disabled="disabled"/>
     </div>
-
 {# Gender #}
     <div class="form-group">
         <label for="gender" class="control-label">{{ 'label.gender'|trans }}</label>
         <input type="text" id="gender" name="gender" value="{{ gender }}" class="form-control" readonly="readonly" disabled="disabled"/>
     </div>
-
 {# Firstname #}
     <div class="form-group">
         <label for="firstname" class="control-label">{{ 'label.firstname'|trans }}</label>
         <input type="text" id="firstname" name="firstname" value="{{ user.firstname }}" class="form-control" readonly="readonly" disabled="disabled"/>
     </div>
-
 {# Lastname #}
     <div class="form-group">
         <label for="lastname" class="control-label">{{ 'label.lastname'|trans }}</label>
         <input type="text" id="lastname" name="lastname" value="{{ user.lastname }}" class="form-control" readonly="readonly" disabled="disabled"/>
     </div>
-
 {# Edit profile button #}
     <div class="form-group">
         <a href="{{ path('fos_user_profile_edit') }}" rel="nofollow" title="{{ 'label.edit'|trans }}">
@@ -55,13 +50,11 @@
             </button></a>
     </div>
 </form>
-
 {# Back to dashboard #}
 <p class="text-center">
     <a href="{{ path('userfiles_dashboard') }}" title="{{ 'label.back_to_dashboard'|trans }}">
         {{ 'label.back_to_dashboard'|trans }}</a>
 </p>
-
 {# Change password #}
 <p class="text-center">
     <a href="{{ path('fos_user_change_password') }}" rel="nofollow" title="{{ 'label.change_password'|trans }}" class="text-warning">
