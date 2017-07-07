@@ -132,7 +132,7 @@ c975_l_user_files:
     #If registration is allowed or not
     registration: false#true (default)
 ```
-Then add the correct values in the `parameters.yml`.
+Then add the correct values in the `app/parameters.yml`
 
 ```yml
 parameters:
@@ -145,6 +145,42 @@ parameters:
     mailer_host: mail.example.com
     mailer_user: contact@example.com
     mailer_password: email_password
+```
+And finally in `app/security.yml`
+
+```yml
+security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface: bcrypt
+
+    role_hierarchy:
+        ROLE_MODERATOR:   ROLE_USER
+        ROLE_ADMIN:       [ROLE_MODERATOR, ROLE_USER]
+        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_MODERATOR, ROLE_USER]
+
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username_email
+
+    firewalls:
+        main:
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+                csrf_token_generator: security.csrf.token_manager
+                login_path: fos_user_security_login
+                check_path: fos_user_security_check
+                default_target_path: userfiles_dashboard
+            remember_me:
+                secret: '%secret%'
+                lifetime: 31536000
+                path: /
+                secure: true
+            logout:
+                path: fos_user_security_logout
+                target: home
+                invalidate_session: true
+            anonymous:    true
 ```
 
 Step 4: Create MySql table
@@ -173,9 +209,19 @@ It is strongly recommended to use the [Override Templates from Third-Party Bundl
 For this, simply, create the following structure `app/Resources/c975LUserFilesBundle/views/` in your app and then duplicate the file `layout.html.twig` in it, to override the existing Bundle files, then apply your needed changes.
 
 You also have to override:
-- `app/Resources/c975LUserFilesBundle/views/registerAcceptanceInfo.html.twig` to display links to Terms of use, etc.
-- `app/Resources/c975LUserFilesBundle/views/deleteAccountInfo.html.twig` that will list the implications, by deleting account, for user
-- `app/Resources/c975LUserFilesBundle/views/emails/layout.html.twig` to set data related to your emails
+- `app/Resources/c975LUserFilesBundle/views/emails/layout.html.twig` to set data related to your emails.
+- `app/Resources/c975LUserFilesBundle/views/registerAcceptanceInfo.html.twig` to display links (Terms of use, Privacy policy, etc.) displayed in the register form.
+- `app/Resources/c975LUserFilesBundle/views/deleteAccountInfo.html.twig` that will list the implications, by deleting account, for user, displayed in the delete account page.
+- `app/Resources/c975LUserFilesBundle/views/dashboardActions.html.twig` to add your own actions (or whatever) in the dashboard i.e.
+```php
+<ul>
+{# PageEdit dashboard #}
+    <li>
+        <a href="{{ path('pageedit_dashboard') }}">
+            {{ 'label.dashboard'|trans({}, 'pageedit') ~ ' (PageEdit)' }}</a>
+    </li>
+</ul>
+`̀̀``
 
 Routes
 ------

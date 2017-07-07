@@ -6,7 +6,7 @@
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 {# Already signed in #}
         {% if is_granted('ROLE_USER') %}
-            {% include('@c975LUserFiles/user/alreadySignedIn.html.twig') %}
+            {% include('@c975LUserFiles/pages/alreadySignedIn.html.twig') %}
 {# Registration #}
         {% else %}
 {# Information #}

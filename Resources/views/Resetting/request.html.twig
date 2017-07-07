@@ -5,7 +5,7 @@
 {% block userfiles_content %}
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
         {% if is_granted('ROLE_USER') %}
-            {% include('@c975LUserFiles/user/alreadySignedIn.html.twig') %}
+            {% include('@c975LUserFiles/pages/alreadySignedIn.html.twig') %}
             <p class="text-center">
                 <a href="{{ path('fos_user_change_password') }}" rel="nofollow" title="{{ 'label.change_password'|trans }}">
                     {{ 'label.change_password'|trans }}</a>

@@ -37,7 +37,7 @@ class UserController extends Controller
             $session->remove('challengeResult');
 
             //Renders the dashboard
-            return $this->render('@c975LUserFiles/user/dashboard.html.twig', array(
+            return $this->render('@c975LUserFiles/pages/dashboard.html.twig', array(
                 'user' => $user,
                 ));
         } else {
@@ -130,7 +130,7 @@ class UserController extends Controller
                 return $this->redirectToRoute('userfiles_signout');
             }
 
-            return $this->render('@c975LUserFiles/user/deleteAccount.html.twig', array(
+            return $this->render('@c975LUserFiles/pages/deleteAccount.html.twig', array(
                 'form' => $form->createView(),
                 ));
         }

@@ -1,5 +1,12 @@
 # Changelog
 
+v1.2
+----
+- Update README.md about informatoin in `security.yml` (06/07/2017)
+- Rename `app/Resources/views/user` to `pages` [BC]
+- Add possibility to add own site actions to dashboard
+- Suppression of un-needed translations and re-numbering (07/07/2017)
+
 v1.1
 ----
 - Update of README.md (04/07/2017)

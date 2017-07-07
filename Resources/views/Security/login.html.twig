@@ -7,7 +7,7 @@
 {# Already signed in #}
         {% if is_granted('ROLE_USER') %}
             <div class="col-xs-12">
-                {% include('@c975LUserFiles/user/alreadySignedIn.html.twig') %}
+                {% include('@c975LUserFiles/pages/alreadySignedIn.html.twig') %}
             </div>
 {# Signin form #}
         {% else %}
