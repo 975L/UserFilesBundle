@@ -32,7 +32,9 @@ class c975LUserFilesExtension extends Extension
         $processedConfig = $this->processConfiguration($configuration, $configs);
 
         $container->setParameter('c975_l_user_files.site', $processedConfig['site']);
+        $container->setParameter('c975_l_user_files.logoutRoute', $processedConfig['logoutRoute']);
         $container->setParameter('c975_l_user_files.registration', $processedConfig['registration']);
         $container->setParameter('c975_l_user_files.gravatar', $processedConfig['gravatar']);
+        $container->setParameter('c975_l_user_files.hwiOauth', $processedConfig['hwiOauth']);
     }
 }

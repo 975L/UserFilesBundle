@@ -17,13 +17,19 @@
             "homepage": "https://github.com/975L"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/975L/FOSUserBundle"
+        }
+    ],
     "require": {
         "php": ">=5.5.9",
         "symfony/framework-bundle": "3.*",
         "sensio/framework-extra-bundle": "3.*",
         "symfony/assetic-bundle": "2.*",
         "symfony/swiftmailer-bundle": "3.*",
-        "friendsofsymfony/user-bundle": "2.*",
+        "friendsofsymfony/user-bundle": "dev-master",
         "c975l/email-bundle": "1.*"
     },
     "minimum-stability": "dev",

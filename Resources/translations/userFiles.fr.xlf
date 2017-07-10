@@ -102,6 +102,10 @@
         <source>label.password_already_requested</source>
         <target><![CDATA[Mot de passe déjà demandé]]></target>
       </trans-unit>
+      <trans-unit id="66">
+        <source>label.profile</source>
+        <target><![CDATA[Profil]]></target>
+      </trans-unit>
       <trans-unit id="64">
         <source>label.regards_team</source>
         <target>

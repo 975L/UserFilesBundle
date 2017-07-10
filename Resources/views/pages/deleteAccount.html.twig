@@ -3,35 +3,31 @@
 {% set title = 'label.delete_account'|trans %}
 
 {% block userfiles_content %}
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 {# Avatar #}
-        {% if gravatar == true %}
-            <p class="text-center">
-                <img class="img-circle" src="{{ app.user.avatar }}" width="128" height="128" />
-            </p>
-        {% endif %}
-{# Form #}
-        {{ form_start(form) }}
-            {{ form_widget(form) }}
-{# Delete account info #}
-            {% include('@c975LUserFiles/deleteAccountInfo.html.twig') %}
-{# Submit #}
-            <div class="form-group">
-                <button type="submit" name="submit" title="{{ 'label.delete_account'|trans }}" class="btn btn-lg btn-danger btn-block">
-                    <span class="glyphicon glyphicon-remove white"></span> {{ 'label.delete_account'|trans }}
-                </button>
-            </div>
-        {{ form_end(form) }}
-{# Back to dashboard #}
+    {% if data.gravatar == true %}
         <p class="text-center">
-            <a href="{{ path('userfiles_dashboard') }}" title="{{ 'label.dashboard'|trans }}">
-                {{ 'label.back_to_dashboard'|trans }}</a>
+            <img class="img-circle" src="{{ app.user.avatar }}" width="128" height="128" />
         </p>
+    {% endif %}
+{# Form #}
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+{# Delete account info #}
+        {% include('@c975LUserFiles/deleteAccountInfo.html.twig') %}
+{# Submit #}
+        <div class="form-group">
+            <input type="submit" id="_submit" name="_submit" value="{{ 'label.delete_account'|trans }}" class="btn btn-block btn-lg btn-danger" />
+        </div>
+    {{ form_end(form) }}
+{# Back to dashboard #}
+    <p class="text-center">
+        <a href="{{ path('userfiles_dashboard') }}" title="{{ 'label.dashboard'|trans }}">
+            {{ 'label.back_to_dashboard'|trans }}</a>
+    </p>
 {# Mandatory field #}
-        <p class="text-muted">
-            <em>
-                {{ 'label.mandatory_field'|trans }}
-            </em>
-        </p>
-    </div>
+    <p class="text-muted">
+        <em>
+            {{ 'label.mandatory_field'|trans }}
+        </em>
+    </p>
 {% endblock %}

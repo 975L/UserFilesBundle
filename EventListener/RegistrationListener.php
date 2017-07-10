@@ -12,17 +12,23 @@ namespace c975L\UserFilesBundle\EventListener;
 use FOS\UserBundle\FOSUserEvents;
 use FOS\UserBundle\Event\FilterUserResponseEvent;
 use FOS\UserBundle\Event\FormEvent;
+use FOS\UserBundle\Event\GetResponseUserEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\Routing\RouterInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
 use Doctrine\ORM\EntityManager;
 
 class RegistrationListener implements EventSubscriberInterface
 {
     protected $em;
+    protected $router;
 
-    public function __construct(EntityManager $em)
+    public function __construct(EntityManager $em, RouterInterface $router)
     {
         $this->em = $em;
+        $this->router = $router;
     }
 
     public static function getSubscribedEvents()
@@ -30,6 +36,7 @@ class RegistrationListener implements EventSubscriberInterface
         return array(
             FOSUserEvents::REGISTRATION_SUCCESS => 'onRegistrationSuccess',
             FOSUserEvents::REGISTRATION_COMPLETED => 'onRegistrationCompleted',
+            FOSUserEvents::REGISTRATION_CONFIRM => 'onRegistrationConfirm',
         );
     }
 
@@ -56,5 +63,11 @@ class RegistrationListener implements EventSubscriberInterface
 
         //Flush DB
         $this->em->flush();
+    }
+
+    //Redirects confirmed user to the dashboard
+    public function onRegistrationConfirm(GetResponseUserEvent $event)
+    {
+        $event->setResponse(new RedirectResponse($this->router->generate('userfiles_dashboard')));
     }
 }

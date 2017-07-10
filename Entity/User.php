@@ -120,7 +120,7 @@ class User extends BaseUser
     /**
      * Set challenge
      *
-     * @param array $challenge
+     * @param string $challenge
      *
      * @return User
      */
@@ -144,7 +144,7 @@ class User extends BaseUser
     /**
      * Set gender
      *
-     * @param array $gender
+     * @param string $gender
      *
      * @return User
      */
@@ -158,7 +158,7 @@ class User extends BaseUser
     /**
      * Get gender
      *
-     * @return array
+     * @return string
      */
     public function getGender()
     {
@@ -216,7 +216,7 @@ class User extends BaseUser
     /**
      * Set creation
      *
-     * @param array $creation
+     * @param DateTime $creation
      *
      * @return User
      */
@@ -230,7 +230,7 @@ class User extends BaseUser
     /**
      * Get creation
      *
-     * @return array
+     * @return DateTime
      */
     public function getCreation()
     {
@@ -240,7 +240,7 @@ class User extends BaseUser
     /**
      * Set lastLogout
      *
-     * @param array $lastLogout
+     * @param DateTime $lastLogout
      *
      * @return User
      */
@@ -254,7 +254,7 @@ class User extends BaseUser
     /**
      * Get lastLogout
      *
-     * @return array
+     * @return DateTime
      */
     public function getLastLogout()
     {
@@ -264,7 +264,7 @@ class User extends BaseUser
     /**
      * Set avatar
      *
-     * @param array $avatar
+     * @param string $avatar
      *
      * @return User
      */
@@ -278,10 +278,34 @@ class User extends BaseUser
     /**
      * Get avatar
      *
-     * @return array
+     * @return string
      */
     public function getAvatar()
     {
         return $this->avatar;
+    }
+
+    /**
+     * Set useGravatar
+     *
+     * @param boolean $useGravatar
+     *
+     * @return User
+     */
+    public function setUseGravatar($useGravatar)
+    {
+        $this->useGravatar = $useGravatar;
+
+        return $this;
+    }
+
+    /**
+     * Get useGravatar
+     *
+     * @return boolean
+     */
+    public function getUseGravatar()
+    {
+        return $this->useGravatar;
     }
 }

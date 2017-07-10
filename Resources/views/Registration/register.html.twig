@@ -3,28 +3,26 @@
 {% set title = 'label.signin_create_account'|trans %}
 
 {% block userfiles_content %}
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 {# Already signed in #}
-        {% if is_granted('ROLE_USER') %}
-            {% include('@c975LUserFiles/pages/alreadySignedIn.html.twig') %}
+    {% if is_granted('ROLE_USER') %}
+        {% include('@c975LUserFiles/pages/alreadySignedIn.html.twig') %}
 {# Registration #}
-        {% else %}
+    {% else %}
 {# Information #}
-            <p class="alert alert-info text-center">
-                {{ 'text.register_info'|trans }}
-            </p>
+        <p class="alert alert-info text-center">
+            {{ 'text.register_info'|trans }}
+        </p>
 {# Password requirement #}
-            <p class="alert alert-warning text-center">
-                {{ 'password.requirement'|trans({}, 'validators') }}
-            </p>
+        <p class="alert alert-warning text-center">
+            {{ 'password.requirement'|trans({}, 'validators') }}
+        </p>
 {# Form #}
-            {% include('@c975LUserFiles/Registration/register_content.html.twig') %}
+        {% include('@c975LUserFiles/Registration/register_content.html.twig') %}
 {# Mandatory field #}
-            <p class="text-muted">
-                <em>
-                    {{ 'label.mandatory_field'|trans }}
-                </em>
-            </p>
-        {% endif %}
-    </div>
+        <p class="text-muted">
+            <em>
+                {{ 'label.mandatory_field'|trans }}
+            </em>
+        </p>
+    {% endif %}
 {% endblock %}

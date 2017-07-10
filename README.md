@@ -96,7 +96,7 @@ fos_user:
     profile:
         form:
             type:               c975L\UserFilesBundle\Form\ProfileType
-            name:               user_files_profile
+            name:               c975l_user_files_profile
     change_password:
         form:
             type:               FOS\UserBundle\Form\Type\ChangePasswordFormType
@@ -107,7 +107,7 @@ fos_user:
             template:           FOSUserBundle:Registration:email.txt.twig
         form:
             type:               c975L\UserFilesBundle\Form\RegistrationType
-            name:               user_files_registration
+            name:               c975l_user_files_registration
     resetting:
         token_ttl:              86400
         email:
@@ -130,6 +130,8 @@ c975_l_email:
 c975_l_user_files:
     #Name of site to be displayed
     site: 'Example.com'
+    #Indicate the Route to be used after Logout
+    logoutRoute: 'home'
     #If registration is allowed or not
     registration: false #true (default)
     #(Optional) If you want to display the gravatar linked to the email user's account
@@ -179,10 +181,6 @@ security:
                 lifetime: 31536000
                 path: /
                 secure: true
-            logout:
-                path: fos_user_security_logout
-                target: home
-                invalidate_session: true
             anonymous:    true
 ```
 
@@ -205,7 +203,7 @@ c975_l_user_files:
     prefix:   /
 ```
 
-Overriding templates
+Overriding Templates
 --------------------
 It is strongly recommended to use the [Override Templates from Third-Party Bundles feature](http://symfony.com/doc/current/templating/overriding.html) to integrate fully with your site.
 
@@ -216,16 +214,137 @@ You also have to override:
 - `app/Resources/c975LUserFilesBundle/views/registerAcceptanceInfo.html.twig` to display links (Terms of use, Privacy policy, etc.) displayed in the register form.
 - `app/Resources/c975LUserFilesBundle/views/deleteAccountInfo.html.twig` that will list the implications, by deleting account, for user, displayed in the delete account page.
 - `app/Resources/c975LUserFilesBundle/views/dashboardActions.html.twig` to add your own actions (or whatever) in the dashboard i.e.
-```php
-<ul>
-{# PageEdit dashboard #}
-    <li>
-        <a href="{{ path('pageedit_dashboard') }}">
-            {{ 'label.dashboard'|trans({}, 'pageedit') ~ ' (PageEdit)' }}</a>
-    </li>
-</ul>
-`̀̀``
 
 Routes
 ------
 The Routes are those used by FOSUserBundle + `userfiles_dashboard`, `userfiles_signout` and `userfiles_delete_account`.
+
+Using HwiOauth (Social network sign in)
+---------------------------------------
+You can display links on the login page to sign in with social network/s. **This bundle doesn't implement this functionality**, it only displays button/s on the login page. You have to configure [HWIOAuthBundle](https://github.com/hwi/HWIOAuthBundle) by your own.
+If you use it, simply indicate in `app/config/routing.yml`
+```yml
+c975_l_user_files:
+    #Indicates the networks you want to appear on the login page
+    hwiOauth: ['facebook', 'google', 'live'] #Default null
+```
+You also have to upload images on your website named `web/images/signin-[network].png` (width="200" height="50"), where `network` is the name defined in the config.yml file.
+
+Overriding Entity
+-----------------
+To add more fields (address, etc.) to the Entity `User`, you need to override it, but you **MUST** extend `FOS\UserBundle\Model\User`, **NOT** extend `c975L/UserFilesBundle/Entity/User`. It gives the following code:
+
+Create the file `src/UserFilesBundle/UserFilesBundle.php`:
+```php
+<?php
+
+namespace UserFilesBundle;
+
+use Symfony\Component\HttpKernel\Bundle\Bundle;
+
+class UserFilesBundle extends Bundle
+{
+    public function getParent()
+    {
+        return 'c975LUserFilesBundle';
+    }
+}
+```
+
+Copy/paste the file `Entity/User.php` in `src/UserFilesBundle/Entity/`
+```php
+<?php
+
+//Change the namespace
+namespace UserFilesBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\User as BaseUser;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
+use Symfony\Component\HttpFoundation\Request;
+use c975L\UserFilesBundle\Validator\Constraints as UserFilesBundleAssert;
+use c975L\UserFilesBundle\Validator\Constraints\Challenge;
+//...
+
+/**
+ * @ORM\Entity
+ */
+class User extends BaseUser
+{
+    //Keep all the fields and functions and add your own
+}
+```
+
+In `app/config/config.yml` change the `user_class`
+```yml
+fos_user:
+    user_class:                 UserFilesBundle\Entity\User
+```
+
+Overridding Forms
+-----------------
+To override Form, create the file `src/UserFilesBundle/UserFilesBundle.php` as explained above and duplicate the Form in `src/UserFilesBundle/Form/[FormName]Type.php`, (i.e. for Profile Form)
+```php
+<?php
+
+//Change the namespace
+namespace UserFilesBundle\Form;
+
+//...
+use c975L\UserFilesBundle\Form\ProfileType as BaseProfileType;
+
+class ProfileType extends BaseProfileType
+{
+    //Do your stuff...
+}
+
+```
+
+In `app/config/services.yml` add a service (i.e. for Profile Form):
+```yml
+services:
+    app.user_files.profile:
+        class: UserFilesBundle\Form\ProfileType
+        arguments: ['@security.token_storage']
+        tags:
+            - { name: form.type }
+```
+
+In `app/config/config.yml` change the `type` linked to the form (i.e. for Profile Form)
+```yml
+fos_user:
+    profile:
+        form:
+            type:               UserFilesBundle\Form\ProfileType
+```
+
+Overriding Controller
+---------------------
+To override Controller, create the file `src/UserFilesBundle/UserFilesBundle.php` as explained above and duplicate the Controller in `src/UserFilesBundle/Controller/UserController.php`
+```php
+<?php
+
+//Change the namespace
+namespace UserFilesBundle\Controller;
+
+//...
+use c975L\UserFilesBundle\Controller\UserController as BaseController;
+
+class UserController extends BaseController
+{
+//DELETE USER
+    /**
+     * @Route("/delete",
+     *      name="userfiles_delete_account")
+     * @Method({"GET", "HEAD", "POST"})
+     */
+    public function deleteAccountAction(Request $request)
+    {
+        parent::deleteAccountAction($request);
+        //Do your stuff...
+    }
+}
+```
+
+The two functions `signoutUserFunction()` and `deleteAccountUserFunction()` are here to easily allow adding functions for sign out and delete user. Simply Override them in the Controller as described above.

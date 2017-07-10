@@ -3,10 +3,8 @@
 {% set title = 'label.reset_password'|trans %}
 
 {% block userfiles_content %}
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-        <p class="alert alert-warning text-center">
-            {{ 'password.requirement'|trans({}, 'validators') }}
-        </p>
-        {% include('@FOSUser/Resetting/reset_content.html.twig') %}
-    </div>
+    <p class="alert alert-warning text-center">
+        {{ 'password.requirement'|trans({}, 'validators') }}
+    </p>
+    {% include('@FOSUser/Resetting/reset_content.html.twig') %}
 {% endblock %}

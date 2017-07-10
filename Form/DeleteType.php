@@ -18,7 +18,7 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 
 class DeleteType extends AbstractType
 {
-    private $tokenStorage;
+    protected $tokenStorage;
 
     public function __construct(TokenStorageInterface $tokenStorage)
     {
@@ -53,7 +53,6 @@ class DeleteType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'c975L\UserFilesBundle\Entity\User',
             'intention' => 'DeleteForm',
             'translation_domain' => 'userFiles',
         ));
@@ -61,6 +60,6 @@ class DeleteType extends AbstractType
 
     public function getBlockPrefix()
     {
-        return 'delete';
+        return 'c975l_user_files_delete';
     }
 }

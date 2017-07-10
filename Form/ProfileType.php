@@ -11,7 +11,6 @@ namespace c975L\UserFilesBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -20,7 +19,7 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 
 class ProfileType extends AbstractType
 {
-    private $tokenStorage;
+    protected $tokenStorage;
 
     public function __construct(TokenStorageInterface $tokenStorage)
     {
@@ -43,11 +42,6 @@ class ProfileType extends AbstractType
                 'attr' => array(
                     'placeholder' => 'placeholder.email',
                 )))
-            ->add('avatar', TextType::class, array(
-                'label' => 'label.avatar',
-                'disabled' => true,
-                'required' => false,
-                ))
             ->add('creation', TextType::class, array(
                 'data' => $creation,
                 'label' => 'label.creation',
@@ -80,7 +74,6 @@ class ProfileType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'c975L\UserFilesBundle\Entity\User',
             'intention' => 'ProfileForm',
             'allow_extra_fields' => true,
             'translation_domain' => 'userFiles',
@@ -94,6 +87,6 @@ class ProfileType extends AbstractType
 
     public function getBlockPrefix()
     {
-        return 'fos_user_profile_edit';
+        return 'c975l_user_files_profile';
     }
 }

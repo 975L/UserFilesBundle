@@ -4,21 +4,25 @@
 
 {% block userfiles_content %}
     {% if is_granted('ROLE_USER') %}
-        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
 {# Avatar #}
-            {% if gravatar == true %}
-                <p class="text-center">
-                    <img class="img-circle" src="{{ app.user.avatar }}" width="128" height="128" />
-                </p>
-            {% endif %}
-            <div class="panel panel-primary">
+        {% if data.gravatar == true %}
+            <p class="text-center">
+                <img class="img-circle" src="{{ app.user.avatar }}" width="128" height="128" />
+            </p>
+        {% endif %}
 {# Actions #}
+        <div class="row">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">{{ 'label.actions'|trans }}</h3>
                 </div>
                 <div class="panel-body">
 {# User's personalised dashboard actions #}
                     {% include('@c975LUserFiles/dashboardActions.html.twig') %}
+{# Profile title #}
+                    <h3>
+                        {{ 'label.profile'|trans }}
+                    </h3>
                     <ul>
 {# View profile #}
                         <li>
@@ -53,6 +57,7 @@
                 </div>
             </div>
         </div>
+{# Must sigin in #}
     {% else %}
         {% include('@c975LUserFiles/pages/alertMustSignIn.html.twig') %}
     {% endif %}

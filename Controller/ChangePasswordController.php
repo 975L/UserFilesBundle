@@ -12,17 +12,14 @@ namespace c975L\UserFilesBundle\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\HttpFoundation\Session\Session;
-use FOS\UserBundle\Controller\SecurityController as BaseController;
+use FOS\UserBundle\Controller\ChangePasswordController as BaseController;
 
-class SecurityController extends BaseController
+class ChangePasswordController extends BaseController
 {
     public function setUserData()
     {
         return array(
-            'site' => $this->getParameter('c975_l_user_files.site'),
-            'registration' => $this->getParameter('c975_l_user_files.registration'),
-            'hwiOauth' => $this->getParameter('c975_l_user_files.hwiOauth'),
+            'gravatar' => $this->getParameter('c975_l_user_files.gravatar'),
         );
     }
 }

@@ -39,7 +39,7 @@ class UserController extends Controller
             //Renders the dashboard
             return $this->render('@c975LUserFiles/pages/dashboard.html.twig', array(
                 'user' => $user,
-                'gravatar' => $this->getParameter('c975_l_user_files.gravatar'),
+                'data' => array('gravatar' => $this->getParameter('c975_l_user_files.gravatar'));
                 ));
         } else {
             throw $this->createAccessDeniedException();
@@ -63,11 +63,26 @@ class UserController extends Controller
         //Writes logout time
         if ($user !== null && $user != 'anon.') {
             $user->setLastLogout(new \DateTime());
+
             $em->persist($user);
             $em->flush();
         }
 
-        return $this->redirectToRoute('fos_user_security_logout');
+        //Invalidates the session
+        $session = new Session();
+        $session->invalidate();
+
+        //Calls user's defined functions if overriden
+        $this->signoutUserFunction();
+
+        return $this->redirectToRoute($this->getParameter('c975_l_user_files.logoutRoute'));
+    }
+
+    /*
+     * Override this function in your Controller to add you own actions to signoutAction
+     */
+    public function signoutUserFunction()
+    {
     }
 
 //DELETE USER
@@ -82,6 +97,9 @@ class UserController extends Controller
         $user = $this->getUser();
 
         if ($user !== null && $user != 'anon.') {
+            //Defines use of Gravatar
+            $user->setUseGravatar($this->getParameter('c975_l_user_files.gravatar'));
+
             //Creates the form
             $form = $this->createForm(DeleteType::class, $user);
             $form->handleRequest($request);
@@ -92,6 +110,9 @@ class UserController extends Controller
 
                 //Gets the translator
                 $translator = $this->get('translator');
+
+                //Calls user's defined functions if overriden
+                $this->deleteAccountUserFunction();
 
                 //Creates email
                 $subject = $translator->trans('label.delete_account', array(), 'userFiles');
@@ -114,7 +135,6 @@ class UserController extends Controller
 
                 //Sends email
                 $email->send();
-
                 //Removes user
                 $em->remove($user);
 
@@ -138,5 +158,12 @@ class UserController extends Controller
 
         //Sign in
         return $this->redirectToRoute('fos_user_security_login');
+    }
+
+    /*
+     * Override this function in your Controller to add you own actions to deleteAccountAction
+     */
+    public function deleteAccountUserFunction()
+    {
     }
 }

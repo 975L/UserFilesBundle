@@ -11,17 +11,34 @@
             </div>
 {# Signin form #}
         {% else %}
-{# Registration #}
-            {% if registration == true %}
+            {% if data.registration == true or data.hwiOauth != null %}
                 <div class="col-xs-12 col-sm-5">
-                    <p class="text-center">
-                        {{ 'label.by_creating_account'|trans({'%site%': site})|raw }}
-                        <br />
-                        <strong>
-                            <a href="{{ path('fos_user_registration_register') }}" class="btn btn-info" rel="nofollow">
-                                <span class="glyphicon glyphicon-user white"></span> {{ 'label.signin_create_account'|trans }}</a>
-                        </strong>
-                    </p>
+{# Social networks #}
+                    {% if data.hwiOauth != null %}
+                        <p class="text-center">
+                            {{ 'label.using_following_services'|trans }}
+                        </p>
+                        {% for network in data.hwiOauth %}
+                            <p class="text-center">
+                                <a href="{{ path('hwi_oauth_service_redirect', {service: network}) }}" rel="nofollow">
+                                    <img src="{{ asset('images/signin-' ~ network ~ '.png') }}" class="img img-rounded" width="200" height="50" /></a>
+                            </p>
+                        {% endfor %}
+                        <p>
+                            <br />
+                        </p>
+                    {% endif %}
+{# Registration #}
+                    {% if data.registration == true %}
+                        <p class="text-center">
+                            {{ 'label.by_creating_account'|trans({'%site%': site})|raw }}
+                            <br />
+                            <strong>
+                                <a href="{{ path('fos_user_registration_register') }}" class="btn btn-info" rel="nofollow">
+                                    <span class="glyphicon glyphicon-user white"></span> {{ 'label.signin_create_account'|trans }}</a>
+                            </strong>
+                        </p>
+                    {% endif %}
                 </div>
                 <div class="col-xs-12 col-sm-7">
             {% else %}

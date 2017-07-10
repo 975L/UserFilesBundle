@@ -5,7 +5,7 @@
     {% set gender = ('label.' ~ user.gender)|trans %}
 {% endif %}
 {# Avatar #}
-    {% if gravatar == true %}
+    {% if data.gravatar == true %}
         <p class="text-center">
             <img class="img-circle" src="{{ app.user.avatar }}" width="128" height="128" />
         </p>
@@ -16,11 +16,6 @@
     <div class="form-group">
         <label for="username" class="control-label">{{ 'label.email'|trans }}</label>
         <input type="text" id="username" name="_username" value="{{ user.email }}" class="form-control" readonly="readonly" disabled="disabled"/>
-    </div>
-{# Avatar #}
-    <div class="form-group">
-        <label for="avatar" class="control-label">{{ 'label.avatar'|trans }}</label>
-        <input type="text" id="avatar" name="_avatar" value="{{ user.avatar }}" class="form-control" readonly="readonly" disabled="disabled"/>
     </div>
 {# Creation #}
     <div class="form-group">
