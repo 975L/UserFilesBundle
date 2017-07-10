@@ -29,7 +29,7 @@
         "sensio/framework-extra-bundle": "3.*",
         "symfony/assetic-bundle": "2.*",
         "symfony/swiftmailer-bundle": "3.*",
-        "friendsofsymfony/user-bundle": "dev-userData",
+        "friendsofsymfony/user-bundle": "dev-userdata",
         "c975l/email-bundle": "1.*"
     },
     "minimum-stability": "dev",
