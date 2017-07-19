@@ -218,9 +218,11 @@ For this, simply, create the following structure `app/Resources/c975LUserFilesBu
 
 You also have to override:
 - `app/Resources/c975LUserFilesBundle/views/emails/layout.html.twig` to set data related to your emails.
-- `app/Resources/c975LUserFilesBundle/views/registerAcceptanceInfo.html.twig` to display links (Terms of use, Privacy policy, etc.) displayed in the register form.
-- `app/Resources/c975LUserFilesBundle/views/deleteAccountInfo.html.twig` that will list the implications, by deleting account, for user, displayed in the delete account page.
-- `app/Resources/c975LUserFilesBundle/views/dashboardActions.html.twig` to add your own actions (or whatever) in the dashboard i.e.
+- `app/Resources/c975LUserFilesBundle/views/fragments/registerAcceptanceInfo.html.twig` to display links (Terms of use, Privacy policy, etc.) displayed in the register form.
+- `app/Resources/c975LUserFilesBundle/views/fragments/deleteAccountInfo.html.twig` that will list the implications, by deleting account, for user, displayed in the delete account page.
+- `app/Resources/c975LUserFilesBundle/views/fragments/dashboardActions.html.twig` to add your own actions (or whatever) in the dashboard i.e.
+
+You can add a navbar menu via `{% include('@c975LUserFiles/fragments/navbarMenu.html.twig') %}.`
 
 Routes
 ------

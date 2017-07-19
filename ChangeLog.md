@@ -1,5 +1,10 @@
 # Changelog
 
+v1.5
+----
+- Add of a template for navbar menu (19/07/2017)
+- Re-organisation of templates to have a clearer view
+
 v1.4.1
 ------
 - Add of missing use in Controller for FOSUser actions (19/07/2017)

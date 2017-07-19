@@ -106,6 +106,10 @@
         <source>label.member_since</source>
         <target><![CDATA[Membre depuis]]></target>
       </trans-unit>
+      <trans-unit id="69">
+        <source>label.my_account</source>
+        <target><![CDATA[Mon compte]]></target>
+      </trans-unit>
       <trans-unit id="18">
         <source>label.password_already_requested</source>
         <target><![CDATA[Mot de passe déjà demandé]]></target>

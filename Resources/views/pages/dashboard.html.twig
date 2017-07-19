@@ -18,7 +18,7 @@
                 </div>
                 <div class="panel-body">
 {# User's personalised dashboard actions #}
-                    {% include('@c975LUserFiles/dashboardActions.html.twig') %}
+                    {% include('@c975LUserFiles/fragments/dashboardActions.html.twig') %}
 {# Profile title #}
                     <h3>
                         {{ 'label.profile'|trans }}
@@ -59,6 +59,6 @@
         </div>
 {# Must sigin in #}
     {% else %}
-        {% include('@c975LUserFiles/pages/alertMustSignIn.html.twig') %}
+        {% include('@c975LUserFiles/fragments/alertMustSignIn.html.twig') %}
     {% endif %}
 {% endblock %}

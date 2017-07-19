@@ -1,0 +1,28 @@
+{% trans_default_domain 'userFiles' %}
+
+{% if is_granted('ROLE_USER') %}
+    <ul class="nav navbar-nav">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'label.my_account'|trans }} <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+{# Dashboard #}
+                <li>
+                    <a href="{{ path('userfiles_dashboard') }}">
+                        {{ 'label.dashboard'|trans }}</a>
+                </li>
+{# Profile #}
+                <li>
+                    <a href="{{ path('fos_user_profile_show') }}">
+                        {{ 'label.view_profile'|trans }}</a>
+                </li>
+{# Separator #}
+                <li role="separator" class="divider"></li>
+{# Sign Out #}
+                <li>
+                    <a href="{{ path('userfiles_signout') }}">
+                        {{ 'label.signout'|trans }}</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+{% endif %}

@@ -13,7 +13,7 @@
     {{ form_start(form) }}
         {{ form_widget(form) }}
 {# Delete account info #}
-        {% include('@c975LUserFiles/deleteAccountInfo.html.twig') %}
+        {% include('@c975LUserFiles/fragments/deleteAccountInfo.html.twig') %}
 {# Submit #}
         <div class="form-group">
             <input type="submit" id="_submit" name="_submit" value="{{ 'label.delete_account'|trans }}" class="btn btn-block btn-lg btn-danger" />
