@@ -1,5 +1,18 @@
 # Changelog
 
+v1.4
+----
+- Correction in Route `userfiles_dashboard` (10/07/2017)
+- Correction of Gravatar error in `userfiles_delete_account` Route
+- Update of README.md to include information about c975L/EmailBundle (15/07/2017)
+- Add databaseEmail as config value to save or not the email sent to deleted user in database linked to c975L/EmailBundle
+- Change php version in `composer.json`
+- Run PHP CS-Fixer (18/07/2017)
+- Add of a Method + config value `archiveUser` to allow archiving of user when deleting account (18/07/2017)
+- Remove of .travis.yml as tests have to be defined before
+- Re-write ChangePassword, Profile and Security Controller methods to integrate the method setUserData() (19/07/2017)
+(These methods have to be removed if https://github.com/FriendsOfSymfony/FOSUserBundle/pull/2587 is merged)
+
 v1.3
 ----
 - Correction of gravatar as an option as it didn't work (08/07/2017)

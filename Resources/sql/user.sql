@@ -36,3 +36,51 @@ CREATE TABLE `user` (
   UNIQUE KEY `UNIQ_8D93D649A0D96FBF` (`email_canonical`),
   KEY `username` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+-- ---------------------------------
+-- Table structure for user_archives
+-- ---------------------------------
+-- DROP TABLE IF EXISTS `user_archives`;
+/*
+CREATE TABLE `user_archives` (
+  `id` bigint(20) unsigned NOT NULL,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `username_canonical` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `gender` set('woman','man') COLLATE utf8_unicode_ci DEFAULT NULL,
+  `firstname` varchar(48) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lastname` varchar(48) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `creation` datetime DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email_canonical` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `avatar` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `enabled` tinyint(1) NOT NULL,
+  `salt` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `last_login` datetime DEFAULT NULL,
+  `last_logout` datetime DEFAULT NULL,
+  `confirmation_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password_requested_at` datetime DEFAULT NULL,
+  `roles` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT '(DC2Type:array)'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+*/
+
+
+-- --------------------------------------
+-- sites_edlo_eu.sp_UserFiles_UserArchive
+-- --------------------------------------
+-- Archives the User
+/*
+DROP PROCEDURE IF EXISTS sp_UserFiles_UserArchive;
+DELIMITER $
+CREATE PROCEDURE sp_UserFiles_UserArchive(qId BIGINT(20))
+LANGUAGE SQL NOT DETERMINISTIC CONTAINS SQL SQL SECURITY INVOKER
+BEGIN
+    -- Inserts User in archive
+    INSERT INTO user_archives
+        SELECT *
+        FROM user
+        WHERE (id = qId);
+END$
+DELIMITER ;
+*/

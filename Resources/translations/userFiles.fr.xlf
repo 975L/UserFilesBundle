@@ -46,6 +46,10 @@
         <source>label.dashboard</source>
         <target><![CDATA[Tableau de bord]]></target>
       </trans-unit>
+      <trans-unit id="68">
+        <source>label.data</source>
+        <target><![CDATA[Données]]></target>
+      </trans-unit>
       <trans-unit id="36">
         <source>label.delete_account</source>
         <target><![CDATA[Suppression du compte]]></target>
@@ -89,6 +93,10 @@
       <trans-unit id="13">
         <source>label.man</source>
         <target><![CDATA[Homme]]></target>
+      </trans-unit>
+      <trans-unit id="67">
+        <source>label.managment</source>
+        <target><![CDATA[Gestion]]></target>
       </trans-unit>
       <trans-unit id="60">
         <source>label.mandatory_field</source>

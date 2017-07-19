@@ -85,7 +85,7 @@ class RegistrationType extends AbstractType
 
     //Defines a challenge (letters or numbers)
     public function challenge()
-        {
+    {
         //Defines challenge if not already in session
         if ($this->session->get('challenge') === null) {
             // Defines variables
@@ -124,7 +124,7 @@ class RegistrationType extends AbstractType
         }
 
         return $challenge;
-        }
+    }
 
     //Defines a challenge with letters
     public function challengeLetters($operation)
@@ -137,10 +137,15 @@ class RegistrationType extends AbstractType
             $symbolsA = $letter4 . $letter2 . $letter3 . $letter1;
             $symbolsB = mt_rand(1, 4);
 
-            if ($symbolsB === 1) $symbolsB = $letter4;
-            elseif ($symbolsB === 2) $symbolsB = $letter2;
-            elseif ($symbolsB === 3) $symbolsB = $letter3;
-            else $symbolsB = $letter1;
+            if ($symbolsB === 1) {
+                $symbolsB = $letter4;
+            } elseif ($symbolsB === 2) {
+                $symbolsB = $letter2;
+            } elseif ($symbolsB === 3) {
+                $symbolsB = $letter3;
+            } else {
+                $symbolsB = $letter1;
+            }
 
             $resultOperation = str_replace($symbolsB, '', $symbolsA);
         } else {

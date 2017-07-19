@@ -35,6 +35,12 @@ class Configuration implements ConfigurationInterface
                     ->prototype('scalar')->end()
                     ->defaultValue(array())
                 ->end()
+                ->booleanNode('databaseEmail')
+                    ->defaultFalse()
+                ->end()
+                ->booleanNode('archiveUser')
+                    ->defaultFalse()
+                ->end()
             ->end()
         ;
 

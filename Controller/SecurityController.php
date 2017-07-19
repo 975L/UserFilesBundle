@@ -17,6 +17,25 @@ use FOS\UserBundle\Controller\SecurityController as BaseController;
 
 class SecurityController extends BaseController
 {
+//This method has to be removed if https://github.com/FriendsOfSymfony/FOSUserBundle/pull/2587 is merged
+    /**
+     * Renders the login template with the given parameters. Overwrite this function in
+     * an extended controller to provide additional data for the login template.
+     *
+     * @param array $data
+     *
+     * @return Response
+     */
+    protected function renderLogin(array $data)
+    {
+        $data['data'] = $this->setUserData();
+
+        return $this->render('@FOSUser/Security/login.html.twig', $data);
+    }
+
+    /*
+     * Method to override to send data to the template
+     */
     public function setUserData()
     {
         return array(

@@ -14,7 +14,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
-use c975L\EmailBundle\Entity\Email;
 use c975L\UserFilesBundle\Form\DeleteType;
 
 class UserController extends Controller
@@ -39,7 +38,7 @@ class UserController extends Controller
             //Renders the dashboard
             return $this->render('@c975LUserFiles/pages/dashboard.html.twig', array(
                 'user' => $user,
-                'data' => array('gravatar' => $this->getParameter('c975_l_user_files.gravatar'));
+                'data' => array('gravatar' => $this->getParameter('c975_l_user_files.gravatar')),
                 ));
         } else {
             throw $this->createAccessDeniedException();
@@ -97,9 +96,6 @@ class UserController extends Controller
         $user = $this->getUser();
 
         if ($user !== null && $user != 'anon.') {
-            //Defines use of Gravatar
-            $user->setUseGravatar($this->getParameter('c975_l_user_files.gravatar'));
-
             //Creates the form
             $form = $this->createForm(DeleteType::class, $user);
             $form->handleRequest($request);
@@ -111,14 +107,13 @@ class UserController extends Controller
                 //Gets the translator
                 $translator = $this->get('translator');
 
-                //Calls user's defined functions if overriden
-                $this->deleteAccountUserFunction();
+                //Calls user's defined method if overriden
+                $this->deleteAccountUserDefinedMethod();
 
                 //Creates email
                 $subject = $translator->trans('label.delete_account', array(), 'userFiles');
                 $body = $this->renderView('@c975LUserFiles/emails/deleteAccount.html.twig');
                 $emailData = array(
-                    'mailer' => $this->get('mailer'),
                     'subject' => $subject,
                     'sentFrom' => $this->getParameter('c975_l_email.sentFrom'),
                     'sentTo' => $user->getEmail(),
@@ -127,14 +122,14 @@ class UserController extends Controller
                     'body' => $body,
                     'ip' => $request->getClientIp(),
                     );
-                $email = new Email();
-                $email->setDataFromArray($emailData);
+                $emailService = $this->get(\c975L\EmailBundle\Service\EmailService::class);
+                $emailService->send($emailData, $this->getParameter('c975_l_user_files.databaseEmail'));
 
-                //Persists Email in DB
-                $em->persist($email);
+                //Archives user
+                if ($this->getParameter('c975_l_user_files.archiveUser') === true) {
+                    $this->archiveUserDefinedMethod();
+                }
 
-                //Sends email
-                $email->send();
                 //Removes user
                 $em->remove($user);
 
@@ -153,7 +148,8 @@ class UserController extends Controller
 
             return $this->render('@c975LUserFiles/pages/deleteAccount.html.twig', array(
                 'form' => $form->createView(),
-                ));
+                'data' => array('gravatar' => $this->getParameter('c975_l_user_files.gravatar')),
+            ));
         }
 
         //Sign in
@@ -161,9 +157,24 @@ class UserController extends Controller
     }
 
     /*
-     * Override this function in your Controller to add you own actions to deleteAccountAction
+     * Override this method in your Controller to add you own actions to deleteAccountAction
      */
-    public function deleteAccountUserFunction()
+    public function deleteAccountUserDefinedMethod()
     {
+    }
+
+    /*
+     * Override this method in your Controller to add you own actions to archiveUser
+     */
+    public function archiveUserDefinedMethod()
+    {
+        //Gets the connection
+        $conn = $this->getDoctrine()->getManager()->getConnection();
+
+        //Calls the stored procedure
+        $query = 'CALL sp_UserFiles_UserArchive("' . $this->getUser()->getId() . '");';
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+        $stmt->closeCursor();
     }
 }

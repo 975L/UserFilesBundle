@@ -46,6 +46,10 @@
         <source>label.dashboard</source>
         <target><![CDATA[Dashboard]]></target>
       </trans-unit>
+      <trans-unit id="68">
+        <source>label.data</source>
+        <target><![CDATA[Data]]></target>
+      </trans-unit>
       <trans-unit id="36">
         <source>label.delete_account</source>
         <target><![CDATA[Delete account]]></target>
@@ -89,6 +93,10 @@
       <trans-unit id="13">
         <source>label.man</source>
         <target><![CDATA[Man]]></target>
+      </trans-unit>
+      <trans-unit id="67">
+        <source>label.managment</source>
+        <target><![CDATA[Managment]]></target>
       </trans-unit>
       <trans-unit id="60">
         <source>label.mandatory_field</source>

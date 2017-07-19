@@ -45,6 +45,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new c975L\EmailBundle\c975LEmailBundle(),
             new c975L\UserFilesBundle\c975LUserFilesBundle(),
         ];
     }
@@ -69,7 +70,7 @@ swiftmailer:
 #Doctrine Configuration
 doctrine:
     dbal:
-        driver:   pdo_mysql
+        driver:   "%database_driver%"
         host:     "%database_host%"
         port:     "%database_port%"
         dbname:   "%database_name%"
@@ -133,14 +134,19 @@ c975_l_user_files:
     #Indicate the Route to be used after Logout
     logoutRoute: 'home'
     #If registration is allowed or not
-    registration: false #true (default)
+    registration: false #true(default)
     #(Optional) If you want to display the gravatar linked to the email user's account
-    gravatar: true #null (default)
+    gravatar: true #null(default)
+    #(Optional) If you want to save the email sent to user when deleting his/her account in the database linked to c975L/EmailBundle
+    databaseEmail: true #false(default)
+    #(Optional) If you want to archive the user in `user_archives` table (you need to create this table, see below)
+    archiveUser: true #false(default)
 ```
 Then add the correct values in the `app/parameters.yml`
 
 ```yml
 parameters:
+    database_driver: pdo_mysql
     database_host: localhost
     database_port: 80
     database_name: database_name
@@ -186,7 +192,8 @@ security:
 
 Step 4: Create MySql table
 --------------------------
-- Use `/Resources/sql/user.sql` to create the table `user`. The `DROP TABLE` is commented to avoid dropping by mistake.
+Use `/Resources/sql/user.sql` to create the table `user` if not already existing. The `DROP TABLE` is commented to avoid dropping by mistake.
+You can also create the table `user_archives` + stored procedure to archive the user when deleting account, for this copy/paste the code from file `/Resources/sql/user.sql`, then set config value `archiveUser` to true.
 
 Step 5: Enable the Routes
 -------------------------

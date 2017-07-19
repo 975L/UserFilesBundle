@@ -36,5 +36,7 @@ class c975LUserFilesExtension extends Extension
         $container->setParameter('c975_l_user_files.registration', $processedConfig['registration']);
         $container->setParameter('c975_l_user_files.gravatar', $processedConfig['gravatar']);
         $container->setParameter('c975_l_user_files.hwiOauth', $processedConfig['hwiOauth']);
+        $container->setParameter('c975_l_user_files.databaseEmail', $processedConfig['databaseEmail']);
+        $container->setParameter('c975_l_user_files.archiveUser', $processedConfig['archiveUser']);
     }
 }

@@ -284,28 +284,4 @@ class User extends BaseUser
     {
         return $this->avatar;
     }
-
-    /**
-     * Set useGravatar
-     *
-     * @param boolean $useGravatar
-     *
-     * @return User
-     */
-    public function setUseGravatar($useGravatar)
-    {
-        $this->useGravatar = $useGravatar;
-
-        return $this;
-    }
-
-    /**
-     * Get useGravatar
-     *
-     * @return boolean
-     */
-    public function getUseGravatar()
-    {
-        return $this->useGravatar;
-    }
 }
