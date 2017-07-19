@@ -9,10 +9,7 @@
 
 namespace c975L\UserFilesBundle\Controller;
 
-use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\Response;
 use FOS\UserBundle\Controller\SecurityController as BaseController;
 
 class SecurityController extends BaseController

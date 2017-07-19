@@ -1,5 +1,9 @@
 # Changelog
 
+v1.4.1
+------
+- Add of missing use in Controller for FOSUser actions (19/07/2017)
+
 v1.4
 ----
 - Correction in Route `userfiles_dashboard` (10/07/2017)
