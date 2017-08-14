@@ -1,5 +1,13 @@
 # Changelog
 
+v1.6
+----
+- Add of a template to display if user is not allowed to use the ressource (20/07/2017)
+- Move call to Avatar from template `Profile/show.html.twig` instead of `Profile/show_content.html.twig` to align with other (14/08/2017)
+- Add of a Twig extension to check if gravatar has to be displayed
+- Remove of overriding FOSUserBundle Controllers methods as replaced by Twig extension
+- Add of a file to override to add options in navbar menu
+
 v1.5
 ----
 - Add of a template for navbar menu (19/07/2017)

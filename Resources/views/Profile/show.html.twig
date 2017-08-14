@@ -3,6 +3,17 @@
 {% set title = 'label.user_profile_show'|trans %}
 
 {% block userfiles_content %}
+{# Avatar #}
+    {% if gravatar_display() == true %}
+        <p class="text-center">
+            <img class="img-circle" src="{{ app.user.avatar }}" width="128" height="128" />
+        </p>
+{# Avatar information #}
+        <p class="text-center">
+            {{ 'text.gravatar_picture'|trans|raw }}
+        </p>
+    {% endif %}
+
 {# Form #}
     {% include('@c975LUserFiles/Profile/show_content.html.twig') %}
 {% endblock %}

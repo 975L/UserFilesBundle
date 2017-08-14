@@ -5,7 +5,7 @@ i.e. You can insert link to other dashboard or any kind of needed information
 You can also make test to check if user has access rights
 <ul>
 {# PageEdit dashboard #}
-    {% if user != null and is_granted('ROLE_ADMIN') %}
+    {% if is_granted('ROLE_ADMIN') %}
         <li>
             <a href="{{ path('pageedit_dashboard') }}">
                 {{ 'label.dashboard'|trans({}, 'pageedit') ~ ' (PageEdit)' }}</a>

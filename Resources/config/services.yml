@@ -19,3 +19,8 @@ services:
         arguments: ['@security.token_storage']
         tags:
             - { name: form.type }
+    c975l_user_files.gravatar:
+        class: c975L\UserFilesBundle\Twig\Gravatar
+        arguments: ['@service_container']
+        tags:
+            - { name: twig.extension }

@@ -5,7 +5,7 @@
 {% block userfiles_content %}
     {% if is_granted('ROLE_USER') %}
 {# Avatar #}
-        {% if data.gravatar == true %}
+        {% if gravatar_display() == true %}
             <p class="text-center">
                 <img class="img-circle" src="{{ app.user.avatar }}" width="128" height="128" />
             </p>
