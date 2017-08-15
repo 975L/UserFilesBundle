@@ -1,6 +1,9 @@
 # Changelog
 
+v1.6.1
+------
 - Change MySql engine for `user_archives` table to ARCHIVE (15/08/2017)
+- Re-added `SecurityController.php` removed by mistake... (15/08/2017)
 
 v1.6
 ----
