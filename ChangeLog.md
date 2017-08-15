@@ -1,5 +1,7 @@
 # Changelog
 
+- Change MySql engine for `user_archives` table to ARCHIVE (15/08/2017)
+
 v1.6
 ----
 - Add of a template to display if user is not allowed to use the ressource (20/07/2017)
