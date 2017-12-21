@@ -1,5 +1,8 @@
 # Changelog
 
+- Changes in `README.md` (16/08/2017)
+- Remove of `confirmAction` due to merge of https://github.com/FriendsOfSymfony/FOSUserBundle/pull/2675 in FOSUserBundle (21/12/2017)
+
 v1.6.1
 ------
 - Change MySql engine for `user_archives` table to ARCHIVE (15/08/2017)

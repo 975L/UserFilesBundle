@@ -25,15 +25,4 @@ class RegistrationController extends BaseController
 
         return parent::registerAction($request);
     }
-
-    //Redirects to login if the confirmation token is expired/invalid (in case user click the confirm link more than once)
-    //https://github.com/FriendsOfSymfony/FOSUserBundle/issues/2106
-    public function confirmAction(Request $request, $token)
-    {
-        try {
-            return parent::confirmAction($request, $token);
-        } catch (NotFoundHttpException $e) {
-            return $this->redirectToRoute('fos_user_security_login');
-        }
-    }
 }
