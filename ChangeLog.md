@@ -1,7 +1,10 @@
 # Changelog
 
+v1.7
+----
 - Changes in `README.md` (16/08/2017)
 - Remove of `confirmAction` due to merge of https://github.com/FriendsOfSymfony/FOSUserBundle/pull/2675 in FOSUserBundle (21/12/2017)
+- Change about composer download in `README.md` (04/02/2018)
 
 v1.6.1
 ------
