@@ -4,6 +4,8 @@
 
 {% block userfiles_content %}
     {% if is_granted('ROLE_USER') %}
+{# Toolbar #}
+    {{ toolbar|raw }}
 {# Avatar #}
         {% if gravatar_display() == true %}
             <p class="text-center">
@@ -19,6 +21,17 @@
                 <div class="panel-body">
 {# User's personalised dashboard actions #}
                     {% include('@c975LUserFiles/fragments/dashboardActions.html.twig') %}
+{# Include other dashboards if defined #}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <h3>
+                            {{ 'label.managment'|trans({}, 'userFiles') }}
+                        </h3>
+                        <ul>
+                            {% for dashboard in dashboards %}
+                                <li><a href="{{ path(dashboard ~ '_dashboard') }}" title="{{ ('label.' ~ dashboard)|trans }}">{{ ('label.' ~ dashboard)|trans({}, 'toolbar') }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
 {# Profile title #}
                     <h3>
                         {{ 'label.profile'|trans }}

@@ -1,15 +1,12 @@
-{# Insert all the actions to appear on the dashboard #}
+{# You can insert here the informations and links that should appear on the dashboard #}
 
+{# i.e. link to PageEdit dashboard #}
 {#
-i.e. You can insert link to other dashboard or any kind of needed information
-You can also make test to check if user has access rights
-<ul>
-{# PageEdit dashboard #}
-    {% if is_granted('ROLE_ADMIN') %}
-        <li>
-            <a href="{{ path('pageedit_dashboard') }}">
-                {{ 'label.dashboard'|trans({}, 'pageedit') ~ ' (PageEdit)' }}</a>
-        </li>
-    {% endif %}
-</ul>
+    <ul>
+        {% if is_granted('ROLE_ADMIN') %}
+            <li>
+                <a href="{{ path('pageedit_dashboard') }}">PageEdit</a>
+            </li>
+        {% endif %}
+    </ul>
 #}

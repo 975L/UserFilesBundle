@@ -1,5 +1,11 @@
 # Changelog
 
+v1.8
+----
+- Add support in `composer.json`+ use of ^ for versions request (04/02/2018)
+- Add c975L/ToolbarBundle (05/02/2018)
+- Automatic includes of dashboards defined in c975L/ToolbarBundle config `c975_l_toolbar.dashboards`, in the main dashboard (05/02/2018)
+
 v1.7
 ----
 - Changes in `README.md` (16/08/2017)

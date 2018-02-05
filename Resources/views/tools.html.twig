@@ -1,0 +1,12 @@
+{% trans_default_domain 'toolbar' %}
+
+{% spaceless %}
+{% if type == 'dashboard' %}
+{# Display #}
+    <a href="{{ path('fos_user_profile_show') }}" class="btn btn-default" title="{{ 'label.view_profile'|trans({}, 'userFiles') }}" role="button">
+        <span class="glyphicon glyphicon-eye-open"></span></a>
+{# Edit #}
+    <a href="{{ path('fos_user_profile_edit') }}" class="btn btn-default" title="{{ 'label.edit_profile'|trans({}, 'userFiles') }}" role="button">
+        <span class="glyphicon glyphicon-pencil"></span></a>
+{% endif %}
+{% endspaceless %}

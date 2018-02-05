@@ -35,14 +35,26 @@ class UserController extends Controller
             $session->remove('challenge');
             $session->remove('challengeResult');
 
+            //Defines toolbar
+            $tools  = $this->renderView('@c975LUserFiles/tools.html.twig', array(
+                'type' => 'dashboard',
+            ));
+            $toolbar = $this->forward('c975L\ToolbarBundle\Controller\ToolbarController::displayAction', array(
+                'tools'  => $tools,
+                'dashboard'  => 'userfiles',
+            ))->getContent();
+
             //Renders the dashboard
             return $this->render('@c975LUserFiles/pages/dashboard.html.twig', array(
                 'user' => $user,
                 'data' => array('gravatar' => $this->getParameter('c975_l_user_files.gravatar')),
+                'toolbar' => $toolbar,
+                'dashboards' => $this->getParameter('c975_l_toolbar.dashboards'),
                 ));
-        } else {
-            throw $this->createAccessDeniedException();
         }
+
+        //Access is denied
+        throw $this->createAccessDeniedException();
     }
 
 //SIGN OUT
