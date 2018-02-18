@@ -1,6 +1,9 @@
 UserFilesBundle
 ===============
 
+**THIS BUNDLE HAS BEEN SET READ-ONLY AND REPLACED BY [c975L/UserBundle](https://github.com/975L/UserBundle)**
+
+
 UserFilesBundle does the following:
 
 - Uses [FOSUserBundle](https://github.com/FriendsOfSymfony/FOSUserBundle) to store users in database,
